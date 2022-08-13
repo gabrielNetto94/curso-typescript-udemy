@@ -70,5 +70,13 @@ function showDirection(direction) {
 // Non-null Assertion operators
 // ! informa para o TS que o elemento não é nulo
 const p = document.getElementById('some-p');
-console.log(p.innerText);
+//console.log(p!.innerText)
 // Bigint
+let n;
+n = 1000n;
+//console.log(n)
+// Symbol -seta valores únicos para a variável mesmo que sejam iguais
+let symbolA = Symbol('a');
+let symbolB = Symbol('a');
+//console.log(symbolA == symbolB)
+//console.log(symbolA === symbolB)

@@ -129,3 +129,6 @@ let symbolB = Symbol('a')
 
 //console.log(symbolA == symbolB)
 //console.log(symbolA === symbolB)
+
+//typeof type guard
+

@@ -35,17 +35,17 @@ function printPerson(person) {
 function showNumber(number1, number2) {
     return number2 !== undefined ? number1 * number2 : number1 * 2;
 }
-//console.log(showNumber(2, 10));
+//console.log(showNumber(2, 10))
 //Union Type, permite parâmetro de diferentes tipos
 function unionType(value) {
     return `Saldo da conta é ${value}`;
 }
-//console.log(unionType([1, '1']));
+//console.log(unionType([1, '1']))
 //
 function showBalance(value) {
     return `Saldo da conta é ${value}`;
 }
-//console.log(showBalance("23"));
+//console.log(showBalance("23"))
 function showUserRole(role) {
     if (typeof role === 'boolean')
         return 'Usuário não autenticado';

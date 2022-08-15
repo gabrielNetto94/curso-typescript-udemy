@@ -77,5 +77,14 @@ function showDogs(dog) {
         console.log(dog);
     }
 }
-showDogs(dog1);
-showDogs(dog2);
+function showReview(star, message) {
+    if (!star) {
+        console.log('Usuário não deixou avaliação');
+        return;
+    }
+    console.log(`Nota ${star} enviada! \n ${message != undefined ? `Feedback: ${message}` : ''}`);
+    return;
+}
+// showReview(false)
+// showReview(1, 'topzera')
+// showReview(5)

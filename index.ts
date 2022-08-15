@@ -16,7 +16,7 @@ function convertNumberToString(number: number) {
 //console.log(convertNumberToString(9))
 
 let strings: Array<string> //apenas string
-let numbers: number[] = []; //apenas números
+let numbers: number[] = [] //apenas números
 let arrayAny: any = [] //qualquer dado
 
 arrayAny.push(2)
@@ -44,21 +44,21 @@ function showNumber(number1: number, number2?: number): number {
 
     return number2 !== undefined ? number1 * number2 : number1 * 2
 }
-//console.log(showNumber(2, 10));
+//console.log(showNumber(2, 10))
 
 //Union Type, permite parâmetro de diferentes tipos
 function unionType(value: Array<number | string>) {
 
     return `Saldo da conta é ${value}`
 }
-//console.log(unionType([1, '1']));
+//console.log(unionType([1, '1']))
 
 //
 function showBalance(value: number | string): number | string {
 
     return `Saldo da conta é ${value}`
 }
-//console.log(showBalance("23"));
+//console.log(showBalance("23"))
 
 
 function showUserRole(role: boolean | string) {

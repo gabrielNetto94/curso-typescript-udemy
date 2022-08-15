@@ -53,10 +53,10 @@ const paul = new SuperUser('paul')
 //verifica qual classe é o objeto
 function userGreeting(user: SuperUser | User) {
     if (user instanceof SuperUser) {
-        console.log('Olá Superuser');
+        console.log('Olá Superuser')
 
     } else if (user instanceof User) {
-        console.log('Olá User');
+        console.log('Olá User')
     }
 }
 
@@ -71,24 +71,40 @@ class Dog {
 
     constructor(name: string, breed?: string) {
         this.name = name
-        if(breed){
+        if (breed) {
             this.breed = breed
         }
     }
 }
 
 const dog1 = new Dog('dog1')
-const dog2 = new Dog('dog2','Pastor alemão')
+const dog2 = new Dog('dog2', 'Pastor alemão')
 
-function showDogs(dog:Dog){
-    if(dog.breed){
-        console.log('Raça');
-        console.log(dog);
-    }else{
-        console.log('SRD');
-        console.log(dog);
-        
+function showDogs(dog: Dog) {
+    if (dog.breed) {
+        console.log('Raça')
+        console.log(dog)
+    } else {
+        console.log('SRD')
+        console.log(dog)
+
     }
 }
-showDogs(dog1)
-showDogs(dog2)
+//showDogs(dog1)
+//showDogs(dog2)
+
+type Star = 1 | 2 | 3 | 4 | 5 | boolean
+
+function showReview(star: Star, message?: string): void {
+    if (!star) {
+        console.log('Usuário não deixou avaliação')
+        return
+    }
+
+    console.log(`Nota ${star} enviada! \n ${message != undefined ? `Feedback: ${message}` : ''}`)
+    return
+}
+
+// showReview(false)
+// showReview(1, 'topzera')
+// showReview(5)

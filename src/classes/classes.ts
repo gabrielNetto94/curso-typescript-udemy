@@ -164,4 +164,173 @@ const myObj = new Nova()
 //myObj.someMethod()
 
 //--------------------------------------------------------------------------------------
-//Visibilidade
+//public 
+class C {
+    public x = 10
+}
+
+class D extends C {
+
+}
+const _c = new C()
+//console.log(_c)
+
+//--------------------------------------------------------------------------------------
+//protected
+class E {
+    //atributo acessível apenas por classe que herda
+    protected x = 10
+
+    //método acessível apenas por classe que herda
+    protected method() {
+        console.log('estou protegido')
+    }
+}
+class F extends E {
+
+    showX() {
+        console.log('X = ' + this.x)
+    }
+
+    showProtectedMethod() {
+        this.method()
+    }
+}
+const _f = new F()
+
+//_f.showX()
+//_f.showProtectedMethod()
+
+//--------------------------------------------------------------------------------------
+//private
+class PrivateClass {
+    private name = 'Name private'
+
+    showName() {
+        return this.name
+    }
+    private privateMethod() {
+        console.log('Método privado')
+    }
+
+    showPrivateMethod() {
+        return this.privateMethod()
+    }
+}
+
+const pObj = new PrivateClass()
+
+// console.log(pObj.showName())
+// pObj.showPrivateMethod()
+
+class TestingPrivate extends PrivateClass {
+    myMethod() {
+        this.showPrivateMethod()
+    }
+}
+
+//--------------------------------------------------------------------------------------
+// static menbers
+class StaticClass {
+    static prop = 'My prop'
+
+    static staticMethod() {
+        console.log('Olá, eu sou estático =)')
+    }
+}
+
+// console.log(StaticClass.prop)
+// StaticClass.staticMethod()
+
+//--------------------------------------------------------------------------------------
+// generic menbers
+class Item<T, U>{
+    first
+    second
+
+    constructor(first: T, second: U) {
+        this.first = first
+        this.second = second
+    }
+
+    get showFirst() {
+        return this.first
+    }
+}
+
+const item1 = new Item('Primeiro 1º', 'Segundo 2º')
+//console.log(item1.showFirst)
+
+const item2 = new Item(true, 90)
+//console.log(item2.showFirst)
+
+//--------------------------------------------------------------------------------------
+// prameters properties
+class ParameterProperties {
+
+    //seta tudo diretamente no construtor
+    constructor(public name: string, private qty: number, private price: number) {
+        this.name = name
+        this.qty = qty
+        this.price = price
+    }
+
+    get showQty() {
+        return `Qtd total = ${this.qty}`
+    }
+
+}
+
+const paramProp = new ParameterProperties('Tênis', 3, 19.90)
+//console.log(paramProp.showQty)
+
+//--------------------------------------------------------------------------------------
+//class expression
+const MyClass = class <T>{
+    name
+
+    constructor(name: T) {
+        this.name = name
+    }
+}
+
+const pessoa = new MyClass('teste')
+//console.log(pessoa.name)
+
+//--------------------------------------------------------------------------------------
+//abstract class
+abstract class AbstractClass {
+
+    abstract showName(): string
+
+}
+//const myObj = new AbstractClass() //Erro
+class AbstractClassExample extends AbstractClass {
+
+    name
+
+    constructor(name: string) {
+        super()
+        this.name = name
+    }
+
+    showName(): string {
+        return this.name
+    }
+}
+const abstractClassExample = new AbstractClassExample('Gárgula')
+
+//console.log(abstractClassExample.showName())
+
+//--------------------------------------------------------------------------------------
+//Relação entre classes
+class Dog {
+    name!: string
+}
+class Cat {
+    name!: string
+}
+
+//tipa com uma classe e instancia com outa
+const dog: Dog = new Cat()
+

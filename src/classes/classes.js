@@ -106,4 +106,136 @@ class Nova extends Base {
 const myObj = new Nova();
 //myObj.someMethod()
 //--------------------------------------------------------------------------------------
-//Visibilidade
+//public 
+class C {
+    constructor() {
+        this.x = 10;
+    }
+}
+class D extends C {
+}
+const _c = new C();
+//console.log(_c)
+//--------------------------------------------------------------------------------------
+//protected
+class E {
+    constructor() {
+        //atributo acessível apenas por classe que herda
+        this.x = 10;
+    }
+    //método acessível apenas por classe que herda
+    method() {
+        console.log('estou protegido');
+    }
+}
+class F extends E {
+    showX() {
+        console.log('X = ' + this.x);
+    }
+    showProtectedMethod() {
+        this.method();
+    }
+}
+const _f = new F();
+//_f.showX()
+//_f.showProtectedMethod()
+//--------------------------------------------------------------------------------------
+//private
+class PrivateClass {
+    constructor() {
+        this.name = 'Name private';
+    }
+    showName() {
+        return this.name;
+    }
+    privateMethod() {
+        console.log('Método privado');
+    }
+    showPrivateMethod() {
+        return this.privateMethod();
+    }
+}
+const pObj = new PrivateClass();
+// console.log(pObj.showName())
+// pObj.showPrivateMethod()
+class TestingPrivate extends PrivateClass {
+    myMethod() {
+        this.showPrivateMethod();
+    }
+}
+//--------------------------------------------------------------------------------------
+// static menbers
+class StaticClass {
+    static staticMethod() {
+        console.log('Olá, eu sou estático =)');
+    }
+}
+StaticClass.prop = 'My prop';
+// console.log(StaticClass.prop)
+// StaticClass.staticMethod()
+//--------------------------------------------------------------------------------------
+// generic menbers
+class Item {
+    constructor(first, second) {
+        this.first = first;
+        this.second = second;
+    }
+    get showFirst() {
+        return this.first;
+    }
+}
+const item1 = new Item('Primeiro 1º', 'Segundo 2º');
+//console.log(item1.showFirst)
+const item2 = new Item(true, 90);
+//console.log(item2.showFirst)
+//--------------------------------------------------------------------------------------
+// prameters properties
+class ParameterProperties {
+    //seta tudo diretamente no construtor
+    constructor(name, qty, price) {
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+        this.name = name;
+        this.qty = qty;
+        this.price = price;
+    }
+    get showQty() {
+        return `Qtd total = ${this.qty}`;
+    }
+}
+const paramProp = new ParameterProperties('Tênis', 3, 19.90);
+//console.log(paramProp.showQty)
+//--------------------------------------------------------------------------------------
+//class expression
+const MyClass = class {
+    constructor(name) {
+        this.name = name;
+    }
+};
+const pessoa = new MyClass('teste');
+//console.log(pessoa.name)
+//--------------------------------------------------------------------------------------
+//abstract class
+class AbstractClass {
+}
+//const myObj = new AbstractClass() //Erro
+class AbstractClassExample extends AbstractClass {
+    constructor(name) {
+        super();
+        this.name = name;
+    }
+    showName() {
+        return this.name;
+    }
+}
+const abstractClassExample = new AbstractClassExample('Gárgula');
+//console.log(abstractClassExample.showName())
+//--------------------------------------------------------------------------------------
+//Relação entre classes
+class Dog {
+}
+class Cat {
+}
+//tipa com uma classe e instancia com outa
+const dog = new Cat();

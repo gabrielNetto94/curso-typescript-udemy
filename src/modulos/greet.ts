@@ -1,4 +1,4 @@
-export default function importGreet(){
+export default function importGreet(): void {
     console.log('Olá galeraaa')
 }
 

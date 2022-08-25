@@ -1,23 +1,42 @@
-import React from 'react';
+import React from 'react'
 
-function App() {
+//Components
+import Header from './components/Header'
+import Footer from './components/Footer'
+import TaskForm from './components/TaskForm'
+import TaskList from './components/TaskList'
+
+//styles
+import styles from './App.module.css'
+
+//Interface
+import ITask from './interfaces/Task'
+
+
+export default function App() {
   return (
     <div>
-      <header>
-        Reactjs + TS
-      </header>
+      <Header />
+      <main className={styles.main}>
+        <div>
+          <h2>O que você vai fazer?</h2>
 
-      <h1>Conteúdo</h1>
+          <TaskForm
+            btnText='Criar tarefa' />
 
-      <footer>
-        <p>
-          <span>
-            Reactjs + TS todo @ {new Date().getFullYear()}
-          </span>
-        </p>
-      </footer>
+          <TaskList>
+
+          </TaskList>
+
+        </div>
+
+        <div>
+          <h2>Suas tarefas</h2>
+          <p>Lista</p>
+        </div>
+
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default App;

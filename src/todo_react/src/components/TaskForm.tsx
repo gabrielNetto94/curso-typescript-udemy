@@ -14,6 +14,7 @@ export default function TaskForm({ btnText }: Props) {
     const [title, setTitle] = useState<string>('')
     const [difficulty, setdifficulty] = useState<number>(0)
 
+    
     const addTaskHandler = () => {
 
     }

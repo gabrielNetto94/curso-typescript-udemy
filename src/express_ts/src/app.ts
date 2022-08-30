@@ -4,10 +4,10 @@ const app = express()
 
 app.use(express.json())
 
-function showPath(req:Request,res:Response,next:NextFunction){
+function showPath(req: Request, res: Response, next: NextFunction) {
     console.log(req.path)
     next()
-}  
+}
 app.use(showPath)
 
 app.get('/', (req, res) => {
@@ -76,19 +76,34 @@ app.get("/api/handler/:id", getUser)
 
 //midleware
 function checkUser(req: Request, res: Response, next: NextFunction) {
-    
+
     console.log('oi =)')
     next()
 }
-app.get("/api/midleware/:id", checkUser,(req: Request, res: Response) => {
-    
+app.get("/api/midleware/:id", checkUser, (req: Request, res: Response) => {
+
     console.log('tchau =)')
     return res.json({ msg: "Olá" })
 })
 
+//req e res com generics
+app.get('/api/user/:id/details/:name', (req: Request<{ id: string, name: string }>, res: Response<{ status: boolean }>) => {
 
-//midleware para todas as rotas
+    const { id, name } = req.params
+    console.log(`id ${id}`)
+    console.log(`name ${name}`)
 
+    return res.json({ status: false })
+})
+
+//try catch
+app.get('/api/error', (req: Request, res: Response) => {
+    try {
+        throw new Error('error')
+    } catch (e: any) {
+        return res.status(500).json({ error: e.message })
+    }
+})
 
 //run server
 app.listen(3333, () => {

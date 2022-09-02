@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 //Components
 import Header from "./components/Header";
@@ -19,7 +19,7 @@ export default function App() {
 
   const deleteTask = (id: number) => {
     setTaskList(
-      taskList.filter((task) => {
+      taskList.filter((task: ITask) => {
         return task.id !== id;
       })
     );
@@ -36,15 +36,15 @@ export default function App() {
     console.log(task);
   };
 
-  const updateTask = (id: number, title: string, difficulty: number):void => {
-    const updateTask: ITask = { id, title, difficulty };
+  const updateTask = (id: number, title: string, difficulty: number): void => {
+    const updateTask: ITask = {id, title, difficulty};
 
-    const updatedItens = taskList.map((task) => {
+    const updatedItens = taskList.map((task: ITask) => {
       return task.id === updateTask.id ? updateTask : task;
     });
 
     setTaskList(updatedItens);
-    hideOrShowModal(false)
+    hideOrShowModal(false);
   };
 
   return (

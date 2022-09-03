@@ -1,23 +1,23 @@
 import express from 'express'
 import config from 'config'
-import router from './routes'
+import routes from './routes'
 import db from '../config/db'
 import Logger from '../config/logger'
 import morganMiddlware from './middleware/morganMiddlware'
 
 const app = express()
 
-//middlware para log das rotas
-app.use(morganMiddlware)
-
-//utiliza as rotas do sistema
-app.use('/api/', router)
-
 //busca a porta do arquivo default
 const port = config.get<number>('port')
 
+//middlware para log das rotas
+app.use(morganMiddlware)
+
 //middleware JSON
 app.use(express.json())
+
+//utiliza as rotas do sistema
+app.use('/api/', routes)
 
 app.listen(port, async () => {
     

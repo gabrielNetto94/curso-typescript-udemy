@@ -1,0 +1,7 @@
+2022-09-03 13:37:16 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:38:13 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:38:49 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:39:03 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:40:21 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:40:33 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m
+2022-09-03 13:41:49 - [31merror[39m - [31mErro ao buscar movie CastError: Cast to ObjectId failed for value "63138112f8007e0f03ac60f" (type string) at path "_id" for model "Movie"[39m

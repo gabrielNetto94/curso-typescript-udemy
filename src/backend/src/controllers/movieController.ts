@@ -1,5 +1,5 @@
 import {Request, Response} from 'express'
-import {MovieModel} from '../models/Movie'
+import {MovieModel} from '../models/MovieModel'
 import logger from '../../config/logger'
 
 export async function createMovie(req: Request, res: Response) {
